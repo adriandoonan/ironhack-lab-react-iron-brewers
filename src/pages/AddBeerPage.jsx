@@ -35,21 +35,21 @@ function AddBeerPage() {
 	const navigate = useNavigate();
 
 	const handleSubmit = (event) => {
-		const camelToSnakeCase = (string) =>
-			string.replace(/[A-Z]/g, (letter) => `_${letter.toLowerCase()}`);
 		event.preventDefault();
-		//console.log(event);
-		const newBeer = {};
-		for (const { name, value, type } of event.target) {
-			//console.log("field", name, "has value", value);
-			if (name) {
-				newBeer[camelToSnakeCase(name)] =
-					type === "number" ? Number(value) : value;
-			}
-		}
-		console.log("my new beer", newBeer);
+
+		const myNewBeer = {
+			name,
+			tagline,
+			description,
+			image_url: imageUrl,
+			fist_brewed: firstBrewed,
+			brewers_tips: brewersTips,
+			attenuation_level: attenuationLevel,
+			contributed_by: contributedBy,
+		};
+		console.log(myNewBeer);
 		axios
-			.post(submitBeerUrl, newBeer)
+			.post(submitBeerUrl, myNewBeer)
 			.then((response) => {
 				console.log(response);
 				if (response.status !== 200) {

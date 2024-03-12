@@ -22,7 +22,7 @@ function BeerDetailsPage() {
 		const response = await axios(
 			`https://ih-beers-api2.herokuapp.com/beers/${id}`,
 		);
-		const beers = await response.data;
+		const beer = await response.data;
 		//console.log(beer);
 		setBeer(beer);
 	};
