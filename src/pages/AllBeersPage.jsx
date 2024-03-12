@@ -16,7 +16,7 @@ function AllBeersPage() {
 	const getAllBeers = async () => {
 		const response = await axios("https://ih-beers-api2.herokuapp.com/beers");
 		const beers = await response.data;
-		//console.log(beers);
+
 		setBeers(beers);
 	};
 	useEffect(() => {

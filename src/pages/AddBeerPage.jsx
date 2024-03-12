@@ -44,14 +44,13 @@ function AddBeerPage() {
 			image_url: imageUrl,
 			first_brewed: firstBrewed,
 			brewers_tips: brewersTips,
-			attenuation_level: attenuationLevel,
+			attenuation_level: Number(attenuationLevel),
 			contributed_by: contributedBy,
 		};
 		console.log(myNewBeer);
 		axios
 			.post(submitBeerUrl, myNewBeer)
 			.then((response) => {
-				console.log(response);
 				if (response.status !== 200) {
 					throw new Error(
 						`seems like we couldn't post a new beer, got a ${response.status} response with a message of ${response.data.message}`,
@@ -60,7 +59,6 @@ function AddBeerPage() {
 				return response.data.message;
 			})
 			.then((message) => {
-				console.log("looks like we could post", message);
 				navigate("/");
 			})
 			.catch((error) => {

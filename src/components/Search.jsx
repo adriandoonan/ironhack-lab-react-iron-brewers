@@ -8,7 +8,7 @@ function Search({ setBeers, getAllBeers }) {
 	const searchForBeers = async (query) => {
 		const request = await axios(searchForBeersUrl, { params: { q: query } });
 		const response = await request.data;
-		console.log(response);
+
 		setBeers(response);
 		return response;
 	};

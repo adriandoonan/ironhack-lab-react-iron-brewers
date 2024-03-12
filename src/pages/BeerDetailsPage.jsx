@@ -23,7 +23,7 @@ function BeerDetailsPage() {
 			`https://ih-beers-api2.herokuapp.com/beers/${id}`,
 		);
 		const beer = await response.data;
-		//console.log(beer);
+
 		setBeer(beer);
 	};
 	useEffect(() => {
