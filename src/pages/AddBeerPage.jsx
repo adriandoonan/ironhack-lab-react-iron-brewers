@@ -42,7 +42,7 @@ function AddBeerPage() {
 			tagline,
 			description,
 			image_url: imageUrl,
-			fist_brewed: firstBrewed,
+			first_brewed: firstBrewed,
 			brewers_tips: brewersTips,
 			attenuation_level: attenuationLevel,
 			contributed_by: contributedBy,
